@@ -1,12 +1,19 @@
 #! /bin/sh
 
+echo "Rebooting waka repo..."
 cp egg.pl ..
+cp waka ../waka.sh
 git reset --hard start
 mv ../egg.pl .
+mv ../waka.sh ./waka
 git tag -d start
-git add egg.pl
-git commit -m "Waka waka!"
+git add egg.pl waka
+git commit -m "Waka waka reboot!"
 git tag start
+echo "Delete remote waka repo, and recreate empty..."
 perl ./egg.pl
+echo -n "Press Enter to upload new waka repo... "
+read answer
 git push --tags origin master
+echo "Done."
 
