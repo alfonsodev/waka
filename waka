@@ -4,7 +4,7 @@ echo "Rebooting waka repo..."
 rm -f waka.zip
 zip waka *
 git reset --hard start
-unzip -oq waka waka egg.pl stats.txt
+unzip -oq waka.zip waka egg.pl stats.txt
 git tag -d start
 git add egg.pl waka stats.txt
 git commit -m "Waka waka reboot!"
