@@ -6,9 +6,6 @@ $mm = 8;
 $yy = 15;
 @days = ( 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 );
 
-print "leap" if $yy % 4 == 0;
-exit;
-
 if (open (STATS, "stats.txt") ) {
     while (<STATS>) {
         $stats {$2} = $1 if /data-count="([^"]+)" data-date="([^"]+)"/;
@@ -58,6 +55,7 @@ for ($col = 0; $col < $cols; $col++) {
             $depth--;
         }
         $dd++;
+        $days [1] = $yy % 4 == 0? 29: 28;
         if ($dd > $days [$mm - 1]) {
             $dd = 1;
             $mm++;
