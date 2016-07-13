@@ -9,7 +9,6 @@ git tag -d start
 git add egg.pl waka stats.txt
 git commit -m "Waka waka reboot!"
 git tag start
-read answer
 
 echo "Delete remote waka repo, and recreate empty..."
 perl ./egg.pl
